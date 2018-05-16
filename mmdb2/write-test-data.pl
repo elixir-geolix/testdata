@@ -1,5 +1,11 @@
 #!/usr/bin/env perl
 
+use autodie;
+use strict;
+use warnings;
+
+our $VERSION = 0.01;
+
 use MaxMind::DB::Writer::Tree;
 use Net::Works::Network;
 
@@ -13,9 +19,7 @@ my $tree = MaxMind::DB::Writer::Tree->new(
     map_key_type_callback => sub { 'utf8_string' },
 );
 
-my $network = Net::Works::Network->new_from_string(
-    string => '1.1.1.1/32'
-);
+my $network = Net::Works::Network->new_from_string( string => '1.1.1.1/32' );
 
 $tree->insert_network( $network, { type => 'test' } );
 
