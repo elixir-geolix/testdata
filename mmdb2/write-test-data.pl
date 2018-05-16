@@ -15,7 +15,7 @@ my $tree = MaxMind::DB::Writer::Tree->new(
     alias_ipv6_to_ipv4    => 1,
     database_type         => 'Geolix-Test',
     languages             => ['en'],
-    description           => { en => 'Geolix test database' },
+    description           => { en => 'Geolix Test Database' },
     map_key_type_callback => sub { 'utf8_string' },
 );
 
