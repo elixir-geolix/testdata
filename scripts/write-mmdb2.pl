@@ -23,6 +23,6 @@ my $network = Net::Works::Network->new_from_string( string => '1.1.1.1/32' );
 
 $tree->insert_network( $network, { type => 'test' } );
 
-open my $fh, '>', './Geolix.mmdb';
+open my $fh, '>', '../priv/mmdb2/Geolix.mmdb';
 $tree->write_tree($fh);
 close $fh;
