@@ -9,7 +9,7 @@ defmodule Geolix.TestData do
   Returns a list of included files (full path) for a given type.
 
   If you pass an unknown format not specified by `__MODULE__.format()`
-  and empty list will be returned.
+  an empty list will be returned.
   """
   @spec files(format()) :: [String.t()]
   def files(format) do
