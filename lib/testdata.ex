@@ -8,7 +8,7 @@ defmodule Geolix.TestData do
   @doc """
   Returns the storage directory for a given type.
 
-  There is no check if the format passed is included in `__MODULE__.format()`.
+  There is no check if the format passed is included in the `t:format/0` type.
   """
   @spec dir(format()) :: String.t()
   def dir(format) do
@@ -21,7 +21,7 @@ defmodule Geolix.TestData do
   @doc """
   Returns a list of included files (full path) for a given type.
 
-  If you pass an unknown format not specified by `__MODULE__.format()`
+  If you pass an unknown format not specified by the `t:format/0` type
   an empty list will be returned.
   """
   @spec files(format()) :: [String.t()]
