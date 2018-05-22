@@ -6,6 +6,8 @@ use warnings;
 
 our $VERSION = 0.01;
 
+use File::Basename;
+use File::Spec;
 use MaxMind::DB::Writer::Tree;
 use Net::Works::Network;
 
@@ -23,6 +25,12 @@ my $network = Net::Works::Network->new_from_string( string => '1.1.1.1/32' );
 
 $tree->insert_network( $network, { type => 'test' } );
 
-open my $fh, '>', '../priv/mmdb2/Geolix.mmdb';
+my $output = File::Spec->catfile(
+    File::Spec->rel2abs(dirname(__FILE__)),
+    '../priv/mmdb2',
+    'Geolix.mmdb'
+);
+
+open my $fh, '>', $output;
 $tree->write_tree($fh);
 close $fh;
