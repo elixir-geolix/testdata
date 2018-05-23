@@ -2,35 +2,66 @@
 
 use autodie;
 use strict;
+use utf8;
 use warnings;
 
 our $VERSION = 0.01;
 
-use File::Basename;
+use Carp qw( croak );
+use Cpanel::JSON::XS qw( decode_json );
+use Cwd qw( abs_path );
+use File::Basename qw( dirname );
+use File::Slurper qw( read_binary write_binary );
 use File::Spec;
+use Math::Int128 qw( uint128 );
+use MaxMind::DB::Writer::Serializer;
 use MaxMind::DB::Writer::Tree;
+use MaxMind::DB::Writer::Util qw( key_for_data );
 use Net::Works::Network;
 
-my $tree = MaxMind::DB::Writer::Tree->new(
-    ip_version            => 6,
-    record_size           => 24,
-    alias_ipv6_to_ipv4    => 1,
-    database_type         => 'Geolix-Test',
-    languages             => ['en'],
-    description           => { en => 'Geolix Test Database' },
-    map_key_type_callback => sub { 'utf8_string' },
-);
+my @databases = ( 'Geolix', );
 
-my $network = Net::Works::Network->new_from_string( string => '1.1.1.1/32' );
+my $dir_script = File::Spec->rel2abs( dirname(__FILE__) );
+my $dir_data   = File::Spec->catfile( $dir_script, '../data/mmdb2' );
+my $dir_output = File::Spec->catfile( $dir_script, '../priv/mmdb2' );
 
-$tree->insert_network( $network, { type => 'test' } );
+sub main {
+    for my $database (@databases) {
+        _write_mmdb2($database);
+    }
 
-my $output = File::Spec->catfile(
-    File::Spec->rel2abs(dirname(__FILE__)),
-    '../priv/mmdb2',
-    'Geolix.mmdb'
-);
+    return;
+}
 
-open my $fh, '>', $output;
-$tree->write_tree($fh);
-close $fh;
+sub _write_mmdb2 {
+    my $name   = shift;
+    my $writer = MaxMind::DB::Writer::Tree->new(
+        ip_version            => 6,
+        record_size           => 24,
+        alias_ipv6_to_ipv4    => 1,
+        languages             => ['en'],
+        database_type         => $name,
+        description           => { en => $name . ' Test Database' },
+        map_key_type_callback => sub { 'utf8_string' },
+    );
+
+    my $nodes =
+      decode_json(
+        read_binary( File::Spec->catfile( $dir_data, "$name.json" ) ) );
+
+    foreach my $node ( @{$nodes} ) {
+        foreach my $network ( keys %{$node} ) {
+            $writer->insert_network(
+                Net::Works::Network->new_from_string( string => $network ),
+                $node->{$network} );
+        }
+    }
+
+    open my $output_fh, '>', File::Spec->catfile( $dir_output, "$name.mmdb" );
+    $writer->write_tree($output_fh);
+    close $output_fh;
+
+    return;
+}
+
+main();
