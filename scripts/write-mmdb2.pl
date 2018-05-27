@@ -19,7 +19,7 @@ use MaxMind::DB::Writer::Tree;
 use MaxMind::DB::Writer::Util qw( key_for_data );
 use Net::Works::Network;
 
-my @databases = ( 'Geolix', );
+my @databases = ( 'Benchmark', 'Geolix' );
 
 my $dir_script = File::Spec->rel2abs( dirname(__FILE__) );
 my $dir_data   = File::Spec->catfile( $dir_script, '../data/mmdb2' );
