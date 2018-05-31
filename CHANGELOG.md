@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.2.0-dev
+## v0.2.0 (2018-05-31)
 
 - Enhancements
     - `Benchmark.mmdb` has been added with the intent to be gradually extended
