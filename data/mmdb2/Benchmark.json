@@ -11,6 +11,22 @@
       "type": "array - 10 elements",
       "array": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
+    "::2.2.0.1/128": {
+      "type": "binary - 1 character",
+      "extrapolate_binary": 1
+    },
+    "::2.2.0.2/128": {
+      "type": "binary - 42 characters",
+      "extrapolate_binary": 42
+    },
+    "::2.2.0.3/128": {
+      "type": "binary - 420 characters",
+      "extrapolate_binary": 420
+    },
+    "::2.2.0.4/128": {
+      "type": "binary - 84000 characters",
+      "extrapolate_binary": 84000
+    },
     "::2.7.0.1/128": {
       "type": "nested map - 1 level",
       "map": {

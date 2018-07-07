@@ -58,6 +58,10 @@ sub _write_mmdb2 {
 
     foreach my $node ( @{$nodes} ) {
         foreach my $network ( keys %{$node} ) {
+            if (exists $node->{$network}{'extrapolate_binary'}) {
+                $node->{$network}{'extrapolate_binary'} = 'x' x $node->{$network}{'extrapolate_binary'};
+            }
+
             $writer->insert_network(
                 Net::Works::Network->new_from_string( string => $network ),
                 $node->{$network} );
