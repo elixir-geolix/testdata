@@ -42,7 +42,13 @@ sub _write_mmdb2 {
         languages             => ['en'],
         database_type         => $name,
         description           => { en => $name . ' Test Database' },
-        map_key_type_callback => sub { 'utf8_string' },
+        map_key_type_callback => sub {
+            my $key = shift;
+
+            return
+                  $key eq 'array' ? ['array', 'uint32']
+                : 'utf8_string';
+        },
     );
 
     my $nodes =
