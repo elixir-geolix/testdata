@@ -19,6 +19,14 @@ defmodule Geolix.TestData do
   end
 
   @doc """
+  Returns the full path to a file.
+
+  No check is performed if the file exists.
+  """
+  @spec file(format(), String.t()) :: String.t()
+  def file(format, filename), do: Path.join([dir(format), filename])
+
+  @doc """
   Returns a list of included files (full path) for a given type.
 
   If you pass an unknown format not specified by the `t:format/0` type
