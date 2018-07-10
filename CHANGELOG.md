@@ -3,6 +3,8 @@
 ## v0.3.0-dev
 
 - Enhancements
+    - Entries to benchmark parsing of specific data types
+      have been added to `Benchmark.mmdb`
     - `Geolix.TestData.file/2` is available to use in favor of
       manually joining the database directory and filename
 
