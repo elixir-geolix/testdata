@@ -7,7 +7,7 @@ defmodule Geolix.TestData.Mixfile do
     [
       app: :geolix_testdata,
       name: "Geolix Test Data Provider",
-      version: "0.3.0",
+      version: "0.4.0-dev",
       elixir: "~> 1.3",
       deps: [{:ex_doc, ">= 0.0.0", only: :dev, runtime: false}],
       description: "Geolix Test Data Provider",
@@ -19,7 +19,7 @@ defmodule Geolix.TestData.Mixfile do
   defp docs do
     [
       main: "Geolix.TestData",
-      source_ref: "v0.3.0",
+      source_ref: "master",
       source_url: @url_github
     ]
   end
