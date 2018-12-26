@@ -11,6 +11,14 @@
       "type": "array - 10 elements",
       "array": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
+    "::2.0.7.0/128": {
+      "type": "boolean - false",
+      "boolean": false
+    },
+    "::2.0.7.1/128": {
+      "type": "boolean - true",
+      "boolean": true
+    },
     "::2.2.0.1/128": {
       "type": "binary - 1 character",
       "extrapolate_binary": 1
