@@ -19,6 +19,10 @@
       "type": "boolean - true",
       "boolean": true
     },
+    "::2.0.8.1/128": {
+      "type": "float",
+      "float": 1.1
+    },
     "::2.2.0.1/128": {
       "type": "binary - 1 character",
       "extrapolate_binary": 1

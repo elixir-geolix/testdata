@@ -49,6 +49,7 @@ sub _write_mmdb2 {
                   $key eq 'array' ? ['array', 'uint32']
                 : $key eq 'boolean' ? 'boolean'
                 : $key eq 'double' ? 'double'
+                : $key eq 'float' ? 'float'
                 : $key eq 'map' ? 'map'
                 : 'utf8_string';
         },
