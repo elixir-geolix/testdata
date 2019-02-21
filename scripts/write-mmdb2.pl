@@ -47,7 +47,6 @@ sub _write_mmdb2 {
 
             return
                   $key eq 'array' ? ['array', 'uint32']
-                : $key eq 'boolean' ? 'boolean'
                 : $key eq 'double' ? 'double'
                 : $key eq 'float' ? 'float'
                 : $key eq 'map' ? 'map'
