@@ -35,6 +35,10 @@
       "type": "binary - 84000 characters",
       "extrapolate_binary": 84000
     },
+    "::2.3.0.1/128": {
+      "type": "double",
+      "double": 42.123456
+    },
     "::2.7.0.1/128": {
       "type": "nested map - 1 level",
       "map": {
