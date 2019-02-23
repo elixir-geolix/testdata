@@ -18,7 +18,7 @@ end
 
 ## Usage
 
-Please look at the `Geolix.TestData` inline documentation for more details:
+Please look at the inline documentation for more details:
 
 ```elixir
 iex> Geolix.TestData.dir()
@@ -26,8 +26,15 @@ iex> Geolix.TestData.dir()
 
 iex> Geolix.TestData.files(:mmdb2)
 ["/path/to/geolix/testdata/priv/mmdb2/Geolix.mmdb", ...]
+
+iex> fixture = "MaxMind-DB-test-decoder.mmdb"
+iex> local = "/full/path/to/local/MaxMind-DB-test-decoder.mmdb"
+iex> Geolix.TestData.MMDB2Fixture.download(fixture, local)
+:ok
 ```
 
 ## License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+License information about the downloadable [MaxMind MMDB2 fixtures](https://github.com/maxmind/MaxMind-DB) can be found at the linked site.
