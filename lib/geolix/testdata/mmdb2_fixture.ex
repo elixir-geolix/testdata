@@ -12,11 +12,14 @@ defmodule Geolix.TestData.MMDB2Fixture do
 
   ## Usage
 
-      iex> download("MaxMind-DB-test-decoder.mmdb", "/full/path/to/local/MaxMind-DB-test-decoder.mmdb")
+      iex> download("MaxMind-DB-test-decoder.mmdb", "/storage/path/for/fixture")
       :ok
   """
   @spec download(String.t(), Path.t()) :: :ok | {:error, term}
-  def download(fixture, local) do
-    Downloader.download(@upstream_base <> fixture, local)
+  def download(fixture, path) do
+    remote = @upstream_base <> fixture
+    local = Path.join(path, fixture)
+
+    Downloader.download(remote, local)
   end
 end

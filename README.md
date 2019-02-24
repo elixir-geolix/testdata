@@ -28,8 +28,8 @@ iex> Geolix.TestData.files(:mmdb2)
 ["/path/to/geolix/testdata/priv/mmdb2/Geolix.mmdb", ...]
 
 iex> fixture = "MaxMind-DB-test-decoder.mmdb"
-iex> local = "/full/path/to/local/MaxMind-DB-test-decoder.mmdb"
-iex> Geolix.TestData.MMDB2Fixture.download(fixture, local)
+iex> path = "/storage/path/for/fixture"
+iex> Geolix.TestData.MMDB2Fixture.download(fixture, path)
 :ok
 ```
 
