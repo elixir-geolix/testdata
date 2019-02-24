@@ -5,9 +5,10 @@ defmodule Geolix.TestData.MMDB2FixtureTest do
 
   test "ensure download is working" do
     fixture = "MaxMind-DB-test-decoder.mmdb"
-    local = Path.join([__DIR__, "../../downloads", fixture])
+    path = Path.join(__DIR__, "../../downloads")
+    local = Path.join(path, fixture)
 
-    assert :ok = MMDB2Fixture.download(fixture, local)
+    assert :ok = MMDB2Fixture.download(fixture, path)
     assert File.exists?(local)
   end
 end
