@@ -15,7 +15,7 @@ defmodule Geolix.TestData.Downloader do
     |> :binary.bin_to_list()
     |> :httpc.request(:geolix_testdata)
     |> case do
-      {:ok, {{_, 200, _}, _, contents}} -> File.write!(local, contents, [:utf8])
+      {:ok, {{_, 200, _}, _, contents}} -> File.write!(local, contents)
       {:ok, _} -> {:error, :read_failed}
       {:error, _} = error -> error
     end
