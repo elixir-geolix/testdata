@@ -8,7 +8,7 @@ defmodule Geolix.TestData.Mixfile do
       app: :geolix_testdata,
       name: "Geolix Test Data Provider",
       version: "0.4.0-dev",
-      elixir: "~> 1.3",
+      elixir: "~> 1.5",
       deps: [{:ex_doc, ">= 0.0.0", only: :dev, runtime: false}],
       description: "Geolix Test Data Provider",
       docs: docs(),
