@@ -4,7 +4,7 @@
 
 - Enhancements
     - Entries to benchmark parsing of specific data types have been extended in `Benchmark.mmdb`
-    - Official MaxMind MMDB2 fixtures can be downloaded using `Geolix.TestData.MMDB2Fixture.download/2`
+    - Official MaxMind MMDB2 fixtures can be downloaded using `Geolix.TestData.MMDB2Fixture.download/2`. To get the fixture contents and only download if not found locally you can use `Geolix.TestData.MMDB2Fixture.contents/2`
 
 ## v0.3.0 (2018-07-10)
 

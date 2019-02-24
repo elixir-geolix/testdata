@@ -31,6 +31,8 @@ iex> fixture = "MaxMind-DB-test-decoder.mmdb"
 iex> path = "/storage/path/for/fixture"
 iex> Geolix.TestData.MMDB2Fixture.download(fixture, path)
 :ok
+iex> Geolix.TestData.MMDB2Fixture.contents(fixture, path)
+<<0, 0, 1, 0, 1, ...>>
 ```
 
 ## License

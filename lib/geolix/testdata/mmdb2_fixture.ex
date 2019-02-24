@@ -8,6 +8,23 @@ defmodule Geolix.TestData.MMDB2Fixture do
   @upstream_base "https://raw.githubusercontent.com/maxmind/MaxMind-DB/master/test-data/"
 
   @doc """
+  Returns the contents of a test fixture.
+
+  If the fixture is not found in the given path a download will be done to make
+  it available.
+  """
+  @spec contents(String.t(), Path.t()) :: binary
+  def contents(fixture, path) do
+    local = Path.join(path, fixture)
+
+    if not File.regular?(local) do
+      :ok = download(fixture, path)
+    end
+
+    File.read!(local)
+  end
+
+  @doc """
   Downloads a test fixture from the MaxMind MMDB2 specification repository.
 
   ## Usage
