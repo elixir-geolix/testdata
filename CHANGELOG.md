@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.4.0-dev
+## v0.4.0 (2019-02-27)
 
 - Enhancements
     - Entries to benchmark parsing of specific data types have been extended in `Benchmark.mmdb`

@@ -10,7 +10,7 @@ Add the library as a dependency to your `mix.exs` file:
 defp deps do
   [
     # ...
-    {:geolix_testdata, "~> 0.3.0"},
+    {:geolix_testdata, "~> 0.4.0"},
     # ...
   ]
 end
