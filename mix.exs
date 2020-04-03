@@ -8,7 +8,7 @@ defmodule Geolix.TestData.MixProject do
       app: :geolix_testdata,
       name: "Geolix Test Data Provider",
       version: "0.5.0-dev",
-      elixir: "~> 1.5",
+      elixir: "~> 1.7",
       deps: [{:ex_doc, ">= 0.0.0", only: :dev, runtime: false}],
       description: "Geolix Test Data Provider",
       docs: docs(),
