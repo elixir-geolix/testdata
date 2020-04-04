@@ -3,6 +3,7 @@
 ## v0.5.0-dev
 
 - Enhancements
+    - IPv6 addresses are available in `Benchmark.mmdb`
     - IPv6 addresses are available in `Geolix.mmdb`
 
 - Backwards incompatible changes

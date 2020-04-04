@@ -3,7 +3,14 @@
     "::1.1.1.1/128": {
       "type": "IPv4 128-bit prefix"
     },
+    "2001:db8::0101:0101/128": {
+      "type": "IPv6 128-bit prefix"
+    },
     "::2.0.4.1/128": {
+      "type": "array - 1 element",
+      "array": [1]
+    },
+    "2001:db8::0200:0401/128": {
       "type": "array - 1 element",
       "array": [1]
     },
@@ -11,7 +18,15 @@
       "type": "array - 10 elements",
       "array": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     },
+    "2001:db8::0200:0410/128": {
+      "type": "array - 10 elements",
+      "array": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
     "::2.0.8.1/128": {
+      "type": "float",
+      "float": 1.1
+    },
+    "2001:db8::0200:0801/128": {
       "type": "float",
       "float": 1.1
     },
@@ -19,7 +34,15 @@
       "type": "binary - 1 character",
       "extrapolate_binary": 1
     },
+    "2001:db8::0202:0001/128": {
+      "type": "binary - 1 character",
+      "extrapolate_binary": 1
+    },
     "::2.2.0.2/128": {
+      "type": "binary - 42 characters",
+      "extrapolate_binary": 42
+    },
+    "2001:db8::0202:0002/128": {
       "type": "binary - 42 characters",
       "extrapolate_binary": 42
     },
@@ -27,11 +50,23 @@
       "type": "binary - 420 characters",
       "extrapolate_binary": 420
     },
+    "2001:db8::0202:0003/128": {
+      "type": "binary - 420 characters",
+      "extrapolate_binary": 420
+    },
     "::2.2.0.4/128": {
       "type": "binary - 84000 characters",
       "extrapolate_binary": 84000
     },
+    "2001:db8::0202:0004/128": {
+      "type": "binary - 84000 characters",
+      "extrapolate_binary": 84000
+    },
     "::2.3.0.1/128": {
+      "type": "double",
+      "double": 42.123456
+    },
+    "2001:db8::0203:0001/128": {
       "type": "double",
       "double": 42.123456
     },
@@ -41,7 +76,46 @@
         "level": 1
       }
     },
+    "2001:db8::0207:0001/128": {
+      "type": "nested map - 1 level",
+      "map": {
+        "level": 1
+      }
+    },
     "::2.7.0.10/128": {
+      "type": "nested map - 10 levels",
+      "map": {
+        "level": 1,
+        "map": {
+          "level": 2,
+          "map": {
+            "level": 3,
+            "map": {
+              "level": 4,
+              "map": {
+                "level": 5,
+                "map": {
+                  "level": 6,
+                  "map": {
+                    "level": 7,
+                    "map": {
+                      "level": 8,
+                      "map": {
+                        "level": 9,
+                        "map": {
+                          "level": 10
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "2001:db8::0207:0010/128": {
       "type": "nested map - 10 levels",
       "map": {
         "level": 1,
