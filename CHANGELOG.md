@@ -2,6 +2,9 @@
 
 ## v0.5.0-dev
 
+- Enhancements
+    - IPv6 addresses are available in `Geolix.mmdb`
+
 - Backwards incompatible changes
     - Minimum required Elixir version is now `~> 1.7`
 
