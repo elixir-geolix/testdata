@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.5.0-dev
+## v0.5.0 (2020-04-05)
 
 - Enhancements
     - IPv6 addresses are available in `Benchmark.mmdb`
