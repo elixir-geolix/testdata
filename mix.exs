@@ -16,6 +16,12 @@ defmodule Geolix.TestData.MixProject do
     ]
   end
 
+  def application do
+    [
+      extra_applications: [:inets]
+    ]
+  end
+
   defp docs do
     [
       main: "Geolix.TestData",
