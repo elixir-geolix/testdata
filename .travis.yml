@@ -2,6 +2,11 @@ os: linux
 dist: xenial
 language: elixir
 
+cache:
+  directories:
+    - _build
+    - deps
+
 matrix:
   include:
     - elixir: 1.7.4
