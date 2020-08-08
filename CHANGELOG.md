@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5.1-dev
+
+- Bug fixes
+    - Warnings from pre-release Elixir `1.11` have been adressed
+
 ## v0.5.0 (2020-04-05)
 
 - Enhancements
