@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.5.1-dev
+## v0.5.1 (2020-08-09)
 
 - Bug fixes
     - Warnings from pre-release Elixir `1.11` have been adressed
