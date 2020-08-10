@@ -3,7 +3,7 @@
 ## v0.5.1 (2020-08-09)
 
 - Bug fixes
-    - Warnings from pre-release Elixir `1.11` have been adressed
+    - Warnings from pre-release Elixir `1.11` have been addressed
 
 ## v0.5.0 (2020-04-05)
 
