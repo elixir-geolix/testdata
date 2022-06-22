@@ -11,15 +11,32 @@ defmodule Geolix.TestData.Downloader do
 
     {:ok, _pid} = :inets.start(:httpc, profile: :geolix_testdata)
 
-    remote
-    |> :binary.bin_to_list()
-    |> :httpc.request(:geolix_testdata)
-    |> case do
+    url = :binary.bin_to_list(remote)
+    http_options = [ssl: ssl_options()]
+
+    response = :httpc.request(:get, {url, []}, http_options, [], :geolix_testdata)
+
+    case response do
       {:ok, {{_, 200, _}, _, contents}} -> File.write!(local, contents)
       {:ok, _} -> {:error, :read_failed}
       {:error, _} = error -> error
     end
   after
     :inets.stop(:httpc, :geolix_testdata)
+  end
+
+  if Code.ensure_loaded?(:public_key) and
+       function_exported?(:public_key, :pkix_verify_hostname_match_fun, 1) do
+    def ssl_options() do
+      [
+        cacertfile: CAStore.file_path(),
+        customize_hostname_check: [
+          match_fun: :public_key.pkix_verify_hostname_match_fun(:https)
+        ],
+        verify: :verify_peer
+      ]
+    end
+  else
+    def ssl_options(), do: []
   end
 end

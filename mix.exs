@@ -10,7 +10,7 @@ defmodule Geolix.TestData.MixProject do
       name: "Geolix Test Data Provider",
       version: @version,
       elixir: "~> 1.7",
-      deps: [{:ex_doc, ">= 0.0.0", only: :dev, runtime: false}],
+      deps: deps(),
       description: "Geolix Test Data Provider",
       docs: docs(),
       package: package()
@@ -19,7 +19,14 @@ defmodule Geolix.TestData.MixProject do
 
   def application do
     [
-      extra_applications: [:inets, :ssl]
+      extra_applications: [:inets, :public_key, :ssl]
+    ]
+  end
+
+  defp deps do
+    [
+      {:castore, "~> 0.1.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
