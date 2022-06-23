@@ -32,3 +32,6 @@ jobs:
 
     - name: format
       run: mix format --check-formatted
+
+    - name: credo
+      run: mix credo --strict
