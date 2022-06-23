@@ -27,7 +27,7 @@ defmodule Geolix.TestData.Downloader do
 
   if Code.ensure_loaded?(:public_key) and
        function_exported?(:public_key, :pkix_verify_hostname_match_fun, 1) do
-    def ssl_options() do
+    defp ssl_options do
       [
         cacertfile: CAStore.file_path(),
         customize_hostname_check: [
@@ -37,6 +37,6 @@ defmodule Geolix.TestData.Downloader do
       ]
     end
   else
-    def ssl_options(), do: []
+    defp ssl_options, do: []
   end
 end
