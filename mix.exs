@@ -12,6 +12,7 @@ defmodule Geolix.TestData.MixProject do
       elixir: "~> 1.7",
       deps: deps(),
       description: "Geolix Test Data Provider",
+      dialyzer: dialyzer(),
       docs: docs(),
       package: package()
     ]
@@ -27,7 +28,20 @@ defmodule Geolix.TestData.MixProject do
     [
       {:castore, "~> 0.1.0"},
       {:credo, "~> 1.0", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp dialyzer do
+    [
+      flags: [
+        :error_handling,
+        :underspecs,
+        :unmatched_returns
+      ],
+      plt_core_path: "plts",
+      plt_file: {:no_warn, "plts/dialyzer.plt"}
     ]
   end
 
