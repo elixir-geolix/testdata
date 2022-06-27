@@ -3,6 +3,7 @@
 ## v0.6.0-dev
 
 - Enhancements
+    - Added option to download a specific version (e.g. commit) of the MaxMindb MMDB2 fixtures while defaulting to the `main` branch
     - Downloads of the MaxMind MMDB2 fixtures are done with SSL verification when running OTP 21 or later using the `:castore` library and `:public_key.pkix_verify_hostname_match_fun/1`
 
 ## v0.5.1 (2020-08-09)

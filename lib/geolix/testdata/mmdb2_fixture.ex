@@ -5,7 +5,8 @@ defmodule Geolix.TestData.MMDB2Fixture do
 
   alias Geolix.TestData.Downloader
 
-  @upstream_base "https://raw.githubusercontent.com/maxmind/MaxMind-DB/master/test-data/"
+  @upstream_repository "https://raw.githubusercontent.com/maxmind/MaxMind-DB/"
+  @upstream_path "/test-data/"
 
   @doc """
   Returns the contents of a test fixture.
@@ -27,14 +28,20 @@ defmodule Geolix.TestData.MMDB2Fixture do
   @doc """
   Downloads a test fixture from the MaxMind MMDB2 specification repository.
 
+  Optional third parameter defines the version of the fixture to download.
+  Defaults to the `main` branch.
+
   ## Usage
 
       iex> download("MaxMind-DB-test-decoder.mmdb", "/storage/path/for/fixture")
       :ok
+
+      iex> download("MaxMind-DB-test-decoder.mmdb", "/storage/path/for/fixture", "9ae17a6")
+      :ok
   """
-  @spec download(String.t(), Path.t()) :: :ok | {:error, term}
-  def download(fixture, path) do
-    remote = @upstream_base <> fixture
+  @spec download(String.t(), Path.t(), String.t()) :: :ok | {:error, term}
+  def download(fixture, path, version \\ "main") do
+    remote = @upstream_repository <> version <> @upstream_path <> fixture
     local = Path.join(path, fixture)
 
     Downloader.download(remote, local)
