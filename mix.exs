@@ -1,6 +1,7 @@
 defmodule Geolix.TestData.MixProject do
   use Mix.Project
 
+  @url_changelog "https://hexdocs.pm/geolix_testdata/changelog.html"
   @url_github "https://github.com/elixir-geolix/testdata"
   @version "0.6.0-dev"
 
@@ -57,7 +58,10 @@ defmodule Geolix.TestData.MixProject do
     [
       files: ["CHANGELOG.md", "LICENSE", "mix.exs", "README.md", "lib", "priv"],
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => @url_github}
+      links: %{
+        "Changelog" => @url_changelog,
+        "GitHub" => @url_github
+      }
     ]
   end
 end
