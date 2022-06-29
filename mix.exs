@@ -48,6 +48,11 @@ defmodule Geolix.TestData.MixProject do
 
   defp docs do
     [
+      extras: [
+        "CHANGELOG.md",
+        LICENSE: [title: "License"],
+        "README.md": [title: "Overview"]
+      ],
       main: "Geolix.TestData",
       source_ref: "v#{@version}",
       source_url: @url_github
