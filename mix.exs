@@ -53,6 +53,7 @@ defmodule Geolix.TestData.MixProject do
         LICENSE: [title: "License"],
         "README.md": [title: "Overview"]
       ],
+      formatters: ["html"],
       main: "Geolix.TestData",
       source_ref: "v#{@version}",
       source_url: @url_github
