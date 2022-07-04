@@ -3,7 +3,7 @@ defmodule Geolix.TestData.MixProject do
 
   @url_changelog "https://hexdocs.pm/geolix_testdata/changelog.html"
   @url_github "https://github.com/elixir-geolix/testdata"
-  @version "0.6.0"
+  @version "0.7.0-dev"
 
   def project do
     [
