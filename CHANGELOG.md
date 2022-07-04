@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.6.0-dev
+## v0.6.0 (2022-07-04)
 
 - Enhancements
     - Added option to download a specific version (e.g. commit) of the MaxMind MMDB2 fixtures while defaulting to the `main` branch
