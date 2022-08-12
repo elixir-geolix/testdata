@@ -28,8 +28,8 @@ defmodule Geolix.TestData.MixProject do
   defp deps do
     [
       {:castore, "~> 0.1.0"},
-      {:credo, "~> 1.0", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
+      {:credo, "~> 1.6", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.2", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
