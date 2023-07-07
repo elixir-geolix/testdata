@@ -3,7 +3,16 @@ name: Code Quality
 on: [push, pull_request]
 
 jobs:
-  check:
+  quality_actions:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: yamllint .
+        working-directory: .github
+
+  quality_elixir:
     runs-on: ubuntu-22.04
 
     steps:
@@ -21,6 +30,7 @@ jobs:
         id: mix-cache
         with:
           path: deps
+          # yamllint disable-line rule:line-length
           key: ${{ runner.os }}-${{ steps.setup.outputs.otp-version }}-${{ steps.setup.outputs.elixir-version }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
 
       - name: mix-deps
