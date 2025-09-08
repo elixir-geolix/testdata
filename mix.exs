@@ -10,7 +10,7 @@ defmodule Geolix.TestData.MixProject do
       app: :geolix_testdata,
       name: "Geolix Test Data Provider",
       version: @version,
-      elixir: "~> 1.9",
+      elixir: "~> 1.17",
       deps: deps(),
       description: "Geolix Test Data Provider",
       dialyzer: dialyzer(),
